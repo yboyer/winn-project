@@ -1,0 +1,31 @@
+# GIT
+.git/
+.gitignore
+
+# USELESS
+*.md
+Dockerfile
+.editorconfig
+clientAng2.ex/
+.dockerignore
+deploy.sh
+test.js
+
+# DOCS
+**/doc/
+
+# SCRIPTS
+scripts/
+
+# NPM
+**/npm-debug.log
+**/node_modules/
+
+# SERVER
+server/test/
+server/apidoc.json
+server/defaultData.json
+
+# CLIENT
+client/**/
+!client/dist/

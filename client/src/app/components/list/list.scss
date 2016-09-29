@@ -1,0 +1,73 @@
+.mdl-data-table tbody tr:nth-child(even) {
+  background-color: #FAFAFA;
+
+  &:hover {
+    background-color: #EEE;
+  }
+}
+
+app-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .mdl-data-table th {
+    font-size: 14px;
+    color: black;
+    font-weight: 500;
+  }
+
+  .mdl-data-table td:nth-last-of-type(2) {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .mdl-data-table td:not(.no-data):last-of-type {
+    padding-right: calc(24px - 16px);
+    padding-left: calc(24px - 16px);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .no-data {
+    color: rgba(0, 0, 0, .5);
+  }
+
+  .title {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: initial;
+  }
+
+  .id {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 13px;
+    line-height: initial;
+  }
+
+  .date {
+    font-weight: 500;
+    padding-bottom: 2px;
+  }
+
+  .status {
+    font-weight: 600;
+  }
+
+  .coords {
+    color: rgba(0, 0, 0, 0.6);
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  tbody {
+    font-size: 14px;
+    line-height: 1.6em;
+  }
+
+  .mdl-dialog {
+    width: 400px;
+
+    .mdl-dialog__title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+  }
+}

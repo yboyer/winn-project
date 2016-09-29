@@ -1,0 +1,17 @@
+header {
+  @extend .mdl-shadow--2dp;
+  @extend .opensans;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1f1f1f;
+  padding: 1rem;
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: #FFF;
+
+  nav {
+    font-size: 0.8em;
+  }
+}

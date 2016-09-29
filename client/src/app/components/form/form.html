@@ -1,0 +1,63 @@
+<div class="demo-card-square mdl-card mdl-shadow--2dp">
+  <form (ngSubmit)="submit(form)" #form="ngForm">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">{{title}}</h2>
+      <h3 *ngIf="transport._id" class="mdl-card__subtitle-text">n°{{transport._id}}</h3>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" material>
+                <input class="mdl-textfield__input" type="text" id="title" [(ngModel)]="transport.title" name="title" required>
+                <label class="mdl-textfield__label" for="title">Title</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fullwidth" material>
+                <input class="mdl-textfield__input" type="text" id="status_select" [(ngModel)]="transport.status" readonly name="status" required>
+                <label for="status_select">
+                  <i class="mdl-icon-toggle__label material-icons">arrow_drop_down</i>
+                </label>
+                <label for="status_select" class="mdl-textfield__label">Status</label>
+                <ul for="status_select" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" material no-mdl-update>
+                  <li *ngFor="let status of statutes" class="mdl-menu__item {{transport.status === status ? 'selected' : ''}}" (click)="updateStatus(status)">{{status}}</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" material>
+                <input class="mdl-textfield__input" type="text" id="departure_input" readonly >
+                <input class="mdl-textfield__input" type="hidden" [(ngModel)]="transport.departure.date" readonly name="departure_date" required>
+                <label class="mdl-textfield__label" for="departure_input">Departure date</label>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" material>
+                <input class="mdl-textfield__input" type="text" id="arrival_input" readonly required>
+                <input class="mdl-textfield__input" type="hidden" [(ngModel)]="transport.arrival.date" readonly name="arrival_date" required>
+                <label class="mdl-textfield__label" for="arrival_input">Arrival date</label>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="actions">
+      <div class="mdl-card__actions mdl-card--border">
+        <button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" material [disabled]="!form.form.valid">Save</button>
+        <button type="button" class="mdl-button mdl-button--accent mdl-color-text--orange-800 mdl-js-button mdl-js-ripple-effect" material (click)="reset()">Reset</button>
+        <button type="button" class="mdl-button mdl-button--accent mdl-color-text--red mdl-js-button mdl-js-ripple-effect" material (click)="cancel()">Cancel</button>
+      </div>
+    </div>
+    <input type="hidden" name="departure_point" [(ngModel)]="transport.departure.point.lat" readonly required>
+    <input type="hidden" name="arrival_point" [(ngModel)]="transport.arrival.point.lat" readonly required>
+  </form>
+</div>

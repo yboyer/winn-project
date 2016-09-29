@@ -1,0 +1,10 @@
+**/node_modules/
+**/npm-debug.log
+/clientAng2.ex/
+**/doc/
+
+#CLIENT
+client/.tmp/
+client/dist/
+client/doc/
+client/jspm_packages/

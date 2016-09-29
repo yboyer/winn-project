@@ -1,0 +1,37 @@
+[{
+  "_id": "55bcc20b-4e59-4f47-b29c-ff5bc97f01d4",
+  "title": "Paris - Caen",
+  "status": "PROPOSED",
+  "departure": {
+    "date": "2016-09-19T12:00:00.000Z",
+    "point": {
+      "lat": 48.8588377,
+      "lon": 2.2775179
+    }
+  },
+  "arrival": {
+    "date": "2016-09-19T15:00:00.000Z",
+    "point": {
+      "lat": 49.1846226,
+      "lon": -0.4072782
+    }
+  }
+}, {
+  "_id": "66850976-4b01-4b64-a477-4413e33f3463",
+  "title": "Caen - Paris",
+  "status": "PROPOSED",
+  "departure": {
+    "date": "2016-09-19T16:00:00.000Z",
+    "point": {
+      "lat": 49.1846226,
+      "lon": -0.4072782
+    }
+  },
+  "arrival": {
+    "date": "2016-09-19T19:00:00.000Z",
+    "point": {
+      "lat": 48.8588377,
+      "lon": 2.2775179
+    }
+  }
+}]

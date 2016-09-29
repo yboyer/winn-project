@@ -1,0 +1,14 @@
+app-editor {
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+
+  .app-editor {
+    @extend .mdl-shadow--2dp;
+
+    border-radius: 4px;
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+  }
+}

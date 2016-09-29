@@ -1,0 +1,44 @@
+<table class="mdl-data-table mdl-shadow--2dp">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Title</th>
+      <th class="mdl-data-table__cell--non-numeric">Departure</th>
+      <th class="mdl-data-table__cell--non-numeric">Arrival</th>
+      <th class="mdl-data-table__cell--non-numeric">Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transport of transports | async">
+      <td class="mdl-data-table__cell--non-numeric">
+        <span class="title">{{transport.title}}</span>
+        <div class="id">{{transport._id}}</div>
+      </td>
+      <td class="mdl-data-table__cell--non-numeric">
+        <div class="date">{{transport.departure.date | date:'dd/MM/yy HH:mm'}}</div>
+        <div class="coords">{{transport.departure.point.lat | number:'1.0-5'}}, {{transport.departure.point.lon | number:'1.0-5'}}</div>
+      </td>
+      <td class="mdl-data-table__cell--non-numeric">
+        <div class="date">{{transport.arrival.date | date:'dd/MM/yy HH:mm'}}</div>
+        <div class="coords">{{transport.arrival.point.lat | number:'1.0-5'}}, {{transport.arrival.point.lon | number:'1.0-5'}}</div>
+      </td>
+      <td class="mdl-data-table__cell--non-numeric">
+        <span class="status">{{transport.status}}</span>
+      </td>
+      <td>
+        <button type="button" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" material [routerLink]="['/edit', transport._id]">Update</button>
+        <button type="button" class="mdl-button mdl-button--accent mdl-color-text--red mdl-js-button mdl-js-ripple-effect" material (click)="showModal(transport)">Delete</button>
+      </td>
+    </tr>
+    <tr *ngIf="!(transports | async)?.length">
+      <td colspan="5" class="mdl-data-table__cell--non-numeric no-data">No data saved..</td>
+    </tr>
+  </tbody>
+</table>
+<dialog class="mdl-dialog">
+  <h4 class="mdl-dialog__title">Delete transport "{{transportModal.title}}" ?</h4>
+  <div class="mdl-dialog__actions">
+    <button type="button" class="mdl-button" (click)="delete(transportModal)">Ok</button>
+    <button type="button" class="mdl-button close" (click)="closeModal()">Cancel</button>
+  </div>
+</dialog>

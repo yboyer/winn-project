@@ -1,0 +1,16 @@
+{
+  "title": "REST DOC API",
+  "name": "winn-project",
+  "description": "GitHub project from msalles-winn",
+  "template": {
+    "forceLanguage": "en",
+    "withCompare": false
+  },
+  "order": [
+    "GetAll",
+    "GetOne",
+    "Add",
+    "Update",
+    "Delete"
+  ]
+}

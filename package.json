@@ -1,0 +1,35 @@
+{
+  "name": "winn-project",
+  "version": "0.0.1",
+  "description": "GitHub project from msalles-winn",
+  "author": "Yoann Boyer <contact@yoannboyer.com>",
+  "main": "server/server.js",
+  "scripts": {
+    "build-client": "(cd client && npm run build)",
+    "dockerize": "docker build -t yboyer/winn-project .",
+    "build": "npm run build-client && npm run dockerize",
+    "preinstall": "(cd client && npm i)",
+    "install": "(cd server && npm i)",
+    "doc_client": "(cd client && npm run doc)",
+    "doc_server": "(cd server && npm run doc)",
+    "doc": "npm run doc_client && npm run doc_server",
+    "test_client": "(cd client && npm run test)",
+    "test_server": "(cd server && npm run test)",
+    "test": "npm run test_client && npm run test_server",
+    "start": "cd server && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yboyer/winn-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yboyer/winn-project/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "nedb": "^1.8.0",
+    "node-uuid": "^1.4.7"
+  }
+}

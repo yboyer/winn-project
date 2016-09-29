@@ -1,0 +1,65 @@
+.getmdl-select .mdl-menu__container .mdl-menu .mdl-menu__item {
+  font-size: 14px;
+}
+
+app-form {
+  display: flex;
+
+  .mdl-card__supporting-text {
+    overflow: initial;
+
+    table {
+      width: 100%;
+
+      .mdl-textfield {
+        width: 100%;
+      }
+    }
+  }
+
+  .mdl-card__subtitle-text {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0;
+  }
+
+  .mdl-card__title {
+    flex-flow: column;
+    align-items: flex-start;
+  }
+
+  .mdl-card__title-text {
+    margin-top: 10px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 29px;
+    align-self: auto;
+  }
+
+  .actions {
+    // flex: 1;
+    // display: flex;
+    // align-items: flex-end;
+    margin-top: 30px;
+  }
+
+  .selected {
+    @extend .mdl-color-text--primary;
+    font-weight: 500;
+  }
+
+  .getmdl-select .mdl-menu__container {
+    overflow: initial;
+    margin-top: 2px;
+  }
+
+  .mdl-textfield__input {
+    @extend .roboto;
+    color: #666666;
+  }
+
+  .mdl-button .material-icons {
+    margin-top: -3px;
+    width: 17px;
+  }
+}

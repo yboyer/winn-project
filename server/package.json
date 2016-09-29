@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "test": "mocha test",
+    "start": "node server.js",
+    "doc": "apidoc -i . -f \"server.js\" -o doc/"
+  },
+  "devDependencies": {
+    "apidoc": "^0.16.1",
+    "mocha": "^3.1.0",
+    "supertest": "^2.0.0"
+  }
+}
