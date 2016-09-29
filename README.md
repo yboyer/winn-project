@@ -27,6 +27,7 @@ Docker image available at https://hub.docker.com/r/yboyer/winn-project/
 
 - Production
   - `docker` - App packager
+
 ---
 ### Pro
   - Latest version of [Angular](http://angular.io/): `V2.0.1`

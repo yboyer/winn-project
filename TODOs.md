@@ -22,7 +22,7 @@ The basic "to do" list is for beginners ? The next tasks are really good points 
 
 
 ## Still too easy ???
-  - [ ] Create a deploy script to update a docker image on the server and restart it after tests success
+  - [x] Create a deploy script to update a docker image on the server and restart it after tests success
 
 
 ## What will make the difference ?
