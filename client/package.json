@@ -54,7 +54,8 @@
     "test": "gulp test",
     "test:auto": "gulp test:auto",
     "doc": "esdoc -c esdoc.json",
-    "jspm": "jspm"
+    "jspm": "jspm",
+    "postinstall": "jspm install"
   },
   "jspm": {
     "dependencies": {

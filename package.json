@@ -5,9 +5,7 @@
   "author": "Yoann Boyer <contact@yoannboyer.com>",
   "main": "server/server.js",
   "scripts": {
-    "build-client": "(cd client && npm run build)",
-    "dockerize": "docker build -t yboyer/winn-project .",
-    "build": "npm run build-client && npm run dockerize",
+    "build": "(cd client && npm run build)",
     "preinstall": "(cd client && npm i)",
     "install": "(cd server && npm i)",
     "doc_client": "(cd client && npm run doc)",

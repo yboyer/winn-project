@@ -44,7 +44,7 @@ Docker image available at https://hub.docker.com/r/yboyer/winn-project/
 
 ## Usage: _(Git)_
 ### Install
-##### Clone the the GitHub repo:
+##### Clone the GitHub repo:
 ```bash
 git clone https://github.com/yboyer/winn-project.git
 cd winn-project
@@ -52,6 +52,10 @@ cd winn-project
 ##### Install dependencies:
 ```bash
 npm i
+```
+##### Build client:
+```bash
+npm run build-client
 ```
 ### Run
 ```bash
@@ -71,15 +75,26 @@ docker run yboyer/winn-project
 ## Global Development
 #### NPM scripts
   - `npm start [PORT]` to launch the server
-  - `npm run build-client` to build the client
-  - `npm run dockerize` to generate the Docker image `yboyer/winn-project`
-  - `npm run build` to build the client and generate the Docker image `yboyer/winn-project`
+  - `npm run build` to build the client
   - `npm run doc_client` to generate client
   - `npm run doc_server` to generate server
   - `npm run doc` to generate for both client and server
   - `npm run test_client` to launch the unit tests for the client
   - `npm run test_server` to launch the unit tests for the server
   - `npm run test` to launch the unit tests for both client and server
+
+##### Build a Docker image
+```bash
+./scripts/build.sh
+```
+##### Push the Docker image
+```bash
+./scripts/push.sh
+```
+##### Deploy the Docker image on the server
+```bash
+./scripts/deploy.sh
+```
 
 ## Server Development
 The server can be started by `npm start` from the root or `node server` from the server directory.
@@ -98,7 +113,7 @@ node server 3005
 
 ## Client Development
 > ### UglifyJS minification problems
-> You need to fix the `uglify-js` version of the `gulp-uglify` dependence. (See [client/README.MD](client/README.MD))
+> You need to fix the `uglify-js` version of the `gulp-uglify` dependence. (See [client/README.md](client/README.md))
 
 #### NPM scripts
   - `npm run build` to build an optimized version of the application in /dist
@@ -116,17 +131,3 @@ If [`gulp-cli`](https://www.npmjs.com/package/gulp-cli) is installed (`npm i gul
   - `gulp serve:dist`
   - `gulp test`
   - `gulp test:auto`
-
-## Scripts
-##### Build Docker image
-```bash
-./scripts/build.sh
-```
-##### Push Docker image
-```bash
-./scripts/push.sh
-```
-##### Deploy the Docker image on the server
-```bash
-./scripts/deploy.sh
-```
