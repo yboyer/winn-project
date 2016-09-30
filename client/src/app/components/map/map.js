@@ -41,6 +41,21 @@ export class MapComponent implements OnInit {
     });
     this.map.fitBounds(new google.maps.LatLngBounds({lat: 60, lng: -150}, {lat: -60, lng: 150}));
 
+    // Set up the popup info
+    this.popup = new google.maps.InfoWindow({
+      content: `
+        <div class="popup">
+          <div>Click once to add a departure point <img src="assets/departure.png"></div>
+          <div>and click a second time to add a arrival point <img src="assets/arrival.png">.<div>
+        <div>
+      `,
+      position: {lat: 0, lng: 0}
+    });
+    this.popup.open(this.map);
+    this.popup.addListener('closeclick', () => {
+      this.popup = null;
+    });
+
     this.map.addListener('click', e => {
       if (this.departureMarker === undefined) {
         this.transport.departure.point = {
@@ -106,6 +121,10 @@ export class MapComponent implements OnInit {
     if (this.polyPath === undefined) {
       // Config of departure marker
       if (this.departureMarker === undefined && latlngs[0].lat) {
+        if (this.popup) {
+          this.popup.close();
+        }
+
         this.departureMarker = new google.maps.Marker({
           map: this.map,
           position: latlngs[0],
