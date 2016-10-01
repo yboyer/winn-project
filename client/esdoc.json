@@ -1,6 +1,7 @@
 {
   "source": "./src",
   "destination": "./doc",
+  "index": "../README.md",
   "plugins": [{
     "name": "esdoc-es7-plugin"
   }]

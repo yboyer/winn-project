@@ -3,6 +3,8 @@
 
 Docker image available at https://hub.docker.com/r/yboyer/winn-project/
 
+![](.readme/screen.png)
+
 ### Technologies
 - __Server__
   - `Node.js`
@@ -22,7 +24,8 @@ Docker image available at https://hub.docker.com/r/yboyer/winn-project/
   - `gulp` - Task runner
   - `browser-sync` - Synced website
   - `sass` - Dynamic style sheet generator
-  - `karma` - Tests
+  - `karma` - Tests on browsers (rendering and methods of Angular components)
+    - `jasmine` - Tests
 
 
 - Production
@@ -32,13 +35,16 @@ Docker image available at https://hub.docker.com/r/yboyer/winn-project/
 ### Pro
   - Latest version of [Angular](http://angular.io/): `V2.0.1`
   - [Docker image](https://hub.docker.com/r/yboyer/winn-project/) size is about 20MB (shipped with `Node.js`)
-  - Lightweight DBMS and subset of MongoDB with `NeDB`
+  - Lightweight DBMS and subset of MongoDB with [`NeDB`](https://github.com/louischatriot/nedb)
   - Use of `ECMAScript 6` and `ECMAScript 7`
   - NPM scripts to do everything
-  - Automatic tasks with `Gulp`
+  - Automatic front-end development tasks with `Gulp`
+  - Automatic Docker image build, push and deployment with shell scripts
 
 ### Cons
-  - ...
+  - No server-side verifications about the transport object sent by others ways than the built website
+  - No checks on the date (eg when the arrival date is earlier than the departure date)
+  - No UX for the pending actions sent by clients
 
 ---
 
@@ -58,6 +64,7 @@ npm i
 npm run build-client
 ```
 ### Run
+##### Run and listen on port `3000`
 ```bash
 npm start
 ```
@@ -121,7 +128,8 @@ node server 3005
   - `npm run serve:dist` to launch a server on the optimized application
   - `npm run test` to launch the unit tests with Karma
   - `npm run test:auto` to launch the unit tests with Karma in watch mode
-  -
+
+
   - `npm run doc` to generate doc
 
 #### Or Gulp tasks
