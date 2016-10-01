@@ -1,6 +1,7 @@
 # GIT
 .git/
 .gitignore
+.attibutes
 
 # USELESS
 *.md
