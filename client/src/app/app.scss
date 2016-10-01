@@ -15,9 +15,27 @@ html {
   @extend .roboto;
 }
 
+input {
+  box-shadow: none;
+
+  &:-moz-placeholder,
+  &:focus {
+    box-shadow: none !important;
+  }
+
+  &:invalid {
+    box-shadow: none;
+  }
+
+  &[readonly] {
+    cursor: default;
+  }
+}
+
 .roboto {
   font-family: "Roboto","Helvetica","Arial",sans-serif;
 }
+
 .opensans {
   font-family: "Open Sans","Helvetica","Arial",sans-serif;
 }

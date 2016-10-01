@@ -521,14 +521,5 @@
   dialogPolyfill['forceRegisterDialog'] = dialogPolyfill.forceRegisterDialog;
   dialogPolyfill['registerDialog'] = dialogPolyfill.registerDialog;
 
-  if (typeof define === 'function' && 'amd' in define) {
-    // AMD support
-    define(function() { return dialogPolyfill; });
-  } else if (typeof module === 'object' && typeof module['exports'] === 'object') {
-    // CommonJS support
-    module['exports'] = dialogPolyfill;
-  } else {
-    // all others
-    window['dialogPolyfill'] = dialogPolyfill;
-  }
+  window['dialogPolyfill'] = dialogPolyfill;
 })();

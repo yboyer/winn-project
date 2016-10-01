@@ -31,6 +31,7 @@ export class FormComponent implements OnInit {
         this._needsUpdate = true;
       }
     }
+    this.updateMaterialElements();
   }
   get transport() {
     return this._transport;
