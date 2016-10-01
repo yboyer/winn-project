@@ -79,6 +79,14 @@ export class FormComponent implements OnInit {
           this.departureInput.inited = true;
         }
         this.transport.departure.date = date.getTime();
+
+        // Set the min arrival date in relation of the departure date
+        this.arrivalPik.setMinDate(date);
+        // Reset the arrival date
+        if (this.transport.arrival.date && this.transport.arrival.date < this.transport.departure.date) {
+          this.transport.arrival.date = this.transport.departure.date;
+          this.updateTransportDate();
+        }
       }
     });
 
