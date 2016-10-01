@@ -1,5 +1,5 @@
 // Transport object template
-export class TransportObject {
+module.exports = class TransportObject {
   /** @param {Object} transport A JSON object to assign to the transport */
   constructor(transport) {
     this._departure = {
@@ -145,7 +145,7 @@ export class TransportObject {
   clone() {
     return new TransportObject(this.toJSON());
   }
-}
+};
 
 function toType(obj) {
   return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();

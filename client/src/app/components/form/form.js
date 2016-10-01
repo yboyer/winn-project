@@ -62,7 +62,6 @@ export class FormComponent implements OnInit {
    * When the component is initialized
    */
   ngOnInit() {
-    this.statutes = ['PROPOSED', 'CONFIRMED', 'RESERVED', 'CHECKEDIN', 'CHECKEDOUT'];
     // Set up the departure date picker
     this.departureInput = document.querySelector('#departure_input');
     this.departurePik = new Pikaday({

@@ -4,6 +4,8 @@ const assert = require('assert');
 const app = require('../server');
 const server = require('supertest')(app);
 
+const Transport = require('../TransportObject');
+
 
 describe('REST Transport:', () => {
   const transport = {
@@ -60,13 +62,25 @@ describe('REST Transport:', () => {
       .end(done);
   });
 
-  it('should update a transport', (done) => {
+
+  it('should not update the transport', (done) => {
+    const newTransport = new Transport(transport).toJSON();
+    newTransport.title = 648465132;
+
+    server.put(`/transports/${transport._id}`)
+      .send(newTransport)
+      .expect(400)
+      .expect((res) => {
+        assert.equal(res.body.message, 'Property title is not a valid string.');
+      })
+      .end(done);
+  });
+
+  it('should update the transport', (done) => {
     transport.status = 'RESERVED';
 
     server.put(`/transports/${transport._id}`)
-      .send({
-        status: transport.status
-      })
+      .send(transport)
       .expect(202)
       .expect((res) => {
         assert.equal(res.body.status, transport.status);
@@ -74,7 +88,7 @@ describe('REST Transport:', () => {
       .end(done);
   });
 
-  it('should check changes (update)', (done) => {
+  it('should retreive the updated transport', (done) => {
     server.get(`/transports/${transport._id}`)
       .expect(200)
       .expect('Content-type', /json/)
@@ -90,10 +104,12 @@ describe('REST Transport:', () => {
       .end(done);
   });
 
-  it('should check changes (remove)', (done) => {
+  it('should not retreive the removed transport', (done) => {
     server.get(`/transports/${transport._id}`)
       .expect(400)
-      .expect('')
+      .expect((res) => {
+        assert(res.body.message.indexOf('No transport object for the id') !== -1, 'Sould return something like "No transport object for the id {...}"');
+      })
       .end(done);
   });
 });

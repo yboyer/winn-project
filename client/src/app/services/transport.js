@@ -49,6 +49,8 @@ export class TransportService {
       .then(res => {
         if (res.status === 201) {
           return new TransportObject(res.json());
+        } else if (res.status === 400) {
+          return Promise.reject(res.json().message);
         }
         return Promise.reject('not added');
       })
@@ -72,6 +74,8 @@ export class TransportService {
       .then(res => {
         if (res.status === 202) {
           return;
+        } else if (res.status === 400) {
+          return Promise.reject(res.json().message);
         }
         return Promise.reject('not updated');
       })

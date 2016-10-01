@@ -24,7 +24,7 @@
                 </label>
                 <label for="status_select" class="mdl-textfield__label">Status</label>
                 <ul for="status_select" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" material no-mdl-update>
-                  <li *ngFor="let status of statutes" class="mdl-menu__item {{transport.status === status ? 'selected' : ''}}" (click)="updateStatus(status)">{{status}}</li>
+                  <li *ngFor="let status of transport.statutes" class="mdl-menu__item {{transport.status === status ? 'selected' : ''}}" (click)="updateStatus(status)">{{status}}</li>
                 </ul>
               </div>
             </td>
