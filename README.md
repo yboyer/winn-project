@@ -42,8 +42,9 @@ Docker image available at https://hub.docker.com/r/yboyer/winn-project/
   - Automatic Docker image build, push and deployment with shell scripts
 
 ### Cons
-  - No server-side verifications about the transport object sent by others ways than the built website
-  - ~~No checks on the date (eg when the arrival date is earlier than the departure date)~~ - See commit [c12ad9](/../../commit/c12ad9)
+  - No isomorphic support the Angular app (See [Universal](https://github.com/angular/universal))
+  - ~~No server-side verifications about the transport object sent by others ways than the built website~~ - See commit [00dd21](/../../commit/00dd21)
+  - ~~No checks on the date (eg when the arrival date is earlier than the departure date)~~ - See commit [c12ad9](/../../commit/c12ad9) but.... wait.. time travels are allowed ?!
   - No UX for the pending actions sent by clients
 
 ---
@@ -128,8 +129,6 @@ node server 3005
   - `npm run serve:dist` to launch a server on the optimized application
   - `npm run test` to launch the unit tests with Karma
   - `npm run test:auto` to launch the unit tests with Karma in watch mode
-
-
   - `npm run doc` to generate doc
 
 #### Or Gulp tasks
