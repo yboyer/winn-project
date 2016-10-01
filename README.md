@@ -43,7 +43,7 @@ Docker image available at https://hub.docker.com/r/yboyer/winn-project/
 
 ### Cons
   - No server-side verifications about the transport object sent by others ways than the built website
-  - No checks on the date (eg when the arrival date is earlier than the departure date)
+  - ~~No checks on the date (eg when the arrival date is earlier than the departure date)~~ - See commit [c12ad9](/../../commit/c12ad9)
   - No UX for the pending actions sent by clients
 
 ---
