@@ -62,7 +62,7 @@ npm i
 ```
 ##### Build client:
 ```bash
-npm run build-client
+npm run build
 ```
 ### Run
 ##### Run and listen on port `3000`
@@ -84,14 +84,14 @@ docker run yboyer/winn-project
 #### NPM scripts
   - `npm start [PORT]` to launch the server
   - `npm run build` to build the client
-  - `npm run doc_client` to generate client
-  - `npm run doc_server` to generate server
-  - `npm run doc` to generate for both client and server
+  - `npm run doc_client` to generate doc for the client
+  - `npm run doc_server` to generate doc for the server
+  - `npm run doc` to generate doc for both client and server
   - `npm run test_client` to launch the unit tests for the client
   - `npm run test_server` to launch the unit tests for the server
-  - `npm run test` to launch the unit tests for both client and server
+  - `npm test` to launch the unit tests for both client and server
 
-##### Build a Docker image
+##### Build the Docker image
 ```bash
 ./scripts/build.sh
 ```
@@ -105,9 +105,9 @@ docker run yboyer/winn-project
 ```
 
 ## Server Development
-The server can be started by `npm start` from the root or `node server` from the server directory.
+The server can be started with `npm start` from the root or with `node server` from the server directory.
 
-It listens from the port `3000` by default but it can be changed by args.
+It listens from the port `3000` by default but it can be changed by passing the new port by argument.
 ```bash
 # npm start [PORT || 3000]
 npm start 3005  
@@ -117,19 +117,19 @@ node server 3005
 #### NPM scripts
   - `npm start [PORT]` to launch the server
   - `npm test` to launch the unit tests with Mocha
-  - `npm run doc` to generate documentation
+  - `npm run doc` to generate documentation in `./doc`
 
 ## Client Development
 > ### UglifyJS minification problems
 > You need to fix the `uglify-js` version of the `gulp-uglify` dependence. (See [client/README.md](client/README.md))
 
 #### NPM scripts
-  - `npm run build` to build an optimized version of the application in /dist
+  - `npm run build` to build an optimized version of the application in `./dist`
   - `npm run serve` to launch a browser sync server
   - `npm run serve:dist` to launch a server on the optimized application
   - `npm run test` to launch the unit tests with Karma
   - `npm run test:auto` to launch the unit tests with Karma in watch mode
-  - `npm run doc` to generate doc
+  - `npm run doc` to generate doc in `./doc`
 
 #### Or Gulp tasks
 If [`gulp-cli`](https://www.npmjs.com/package/gulp-cli) is installed (`npm i gulp-cli -g`):
@@ -138,3 +138,19 @@ If [`gulp-cli`](https://www.npmjs.com/package/gulp-cli) is installed (`npm i gul
   - `gulp serve:dist`
   - `gulp test`
   - `gulp test:auto`
+
+---
+## TODOs
+  - [x] Create a REST API to serve an Transport object.
+  - [x] A transport object is defined by : an ID (uuid), a title (string), a departure date (datetime), an arrival date (datetime), a departure point (geocode), an arrival point (geocode), a status (PROPOSED, CONFIRMED, RESERVED, CHECKEDIN, CHECKEDOUT).
+  - [x] Create a GUI with JS framework of your choice, this GUI must be served by the NodeJS server. We access the GUI from the "/gui" URL prefix.
+  - [x] The transport objects are stored in-memory.
+  - [x] The GUI contains 2 pages : a list of transports, all informations are presented into a table, update, delete actions in a column, and a page with a form to add or edit a transport.
+  - [x] We start the server with following command : npm start, do not forget tests (Mocha) and documentation (APIDOCJS.com) !
+  - [x] Create a docker image with this server
+  - [x] Use a DBMS to store the transport objects
+  - [x] Show the transport objects on a Google Map
+  - [x] Create a deploy script to update a docker image on the server and restart it after tests success
+  - [x] It must work, easy to launch ;
+  - [x] Code quality ;
+  - [x] Tested and Documented ...
